@@ -20,7 +20,7 @@ $(document).ready(function() {
 		  recognition.onstart = function() { 
 		  	console.log("starting!");
 		  	recognizing = true;
-	  	    showInfo('info_speak_now');
+	  	    //showInfo('info_speak_now');
 	  	    start_img.src = 'mic-animate.gif';
 		  };
 		  recognition.onresult = function(event) {
