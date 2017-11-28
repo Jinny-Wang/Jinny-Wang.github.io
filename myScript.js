@@ -14,7 +14,7 @@ $(document).ready(function() {
 	} else {
 		  recognition = new webkitSpeechRecognition();
 		  console.log(recognition);
-		  recognition.continuous = true;//when the user stops speaking, recognition ends
+		  recognition.continuous = false;//when the user stops speaking, recognition ends
 		  recognition.interimResults = true;
 
 		  recognition.onstart = function() { 
