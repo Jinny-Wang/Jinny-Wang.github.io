@@ -135,9 +135,9 @@ function action(text){
 	      	  $("a,input,button").each(function() {
 	      	    if($(this)[0].tagName == "INPUT") {
 	      	    	// look for the text in INPUT fields
-	      	    } else if() {
-	      	    	//
-	      	    }
+	      	    // } else if() {
+	      	    // 	//
+	      	    // }
 	      	  });
 	      	  break;
 	      	case "scroll":
