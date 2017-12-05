@@ -133,7 +133,7 @@ function action(text){
 	      	  var stringpieces = arg.split(/\s/);
 
 	      	  $("a,input,button").each(function() {
-	      	    if($(this)[0].tagName == "INPUT") {
+	      	    if($(this)[0].tagName == "INPUT") {}
 	      	    	// look for the text in INPUT fields
 	      	    // } else if() {
 	      	    // 	//
@@ -142,7 +142,7 @@ function action(text){
 	      	  break;
 	      	case "scroll":
 	      	  console.log("handling scroll`")
-	      	  if(result[1]=="up")
+	      	  if(result[1]=="up"){}
 	      	  	//scroll up 
 	      	  else if(result[1]=="down"){
 	      	  	//scroll down 
@@ -150,10 +150,10 @@ function action(text){
 	        		scrollTop: $(document).scrollTop()+150
 	    		}, 1000);
 	      	  }
-	      	  	
-	      	  else
+	     
+	      	  else{
 	      	  	$("#final_span").innerHTML = "I don't understand!";
-	      	  
+	      	  }
 	      	  break;
 	      	case "enter":
 	      	  // what do we do on enter?
