@@ -167,8 +167,9 @@ function action(text){
 	      	    		console.log("clicking",$(this));
 	      	    		simulateClick($(this)[0]);
 	      	    	}
+	      	    	
 	      	    }
-	      	    window.alert("I don't understand");
+	      	    //window.alert("I don't understand");
 	      	  	
 	      	  
 	      	  });
