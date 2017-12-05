@@ -112,7 +112,8 @@ function capitalize(s) {
 function action(text){
 	var re = /^(click|scroll|enter)\s(.*)/i;
     var result = re.exec(text);
-
+    console.log("Taking action on text");
+    console.log(text);
  	if(result) {
 	  var verb = result[1];
       var arg = result[2]
