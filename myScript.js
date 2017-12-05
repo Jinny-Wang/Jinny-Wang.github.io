@@ -109,6 +109,19 @@ function capitalize(s) {
   return s.replace(first_char, function(m) { return m.toUpperCase(); });
 }
 
+function simulateClick(element) {
+  if (!element) return;
+  var dispatchEvent = function (elt, name) {
+    var clickEvent = document.createEvent('MouseEvents');
+    clickEvent.initEvent(name, true, true);
+    elt.dispatchEvent(clickEvent);
+  };
+  dispatchEvent(element, 'mouseover');
+  dispatchEvent(element, 'mousedown');
+  dispatchEvent(element, 'click');
+  dispatchEvent(element, 'mouseup');
+}
+
 //given a command spoke by the user,take actions accordingly
 function action(text){
 		console.log("Taking action on text");
@@ -119,7 +132,7 @@ function action(text){
 	    
 	 	if(result) {
 		  var verb = result[1];
-	      var arg = result[2]
+	      var arg = result[2];
 
 	      console.log("verb: " + verb + ", args: " + arg)
 
@@ -150,7 +163,6 @@ function action(text){
 	        		scrollTop: $(document).scrollTop()+150
 	    		}, 1000);
 	      	  }
-	     
 	      	  else{
 	      	  	$("#final_span").innerHTML = "I don't understand!";
 	      	  }
@@ -165,18 +177,7 @@ function action(text){
 	 	
 }
 
-function simulateClick(element) {
-  if (!element) return;
-  var dispatchEvent = function (elt, name) {
-    var clickEvent = document.createEvent('MouseEvents');
-    clickEvent.initEvent(name, true, true);
-    elt.dispatchEvent(clickEvent);
-  };
-  dispatchEvent(element, 'mouseover');
-  dispatchEvent(element, 'mousedown');
-  dispatchEvent(element, 'click');
-  dispatchEvent(element, 'mouseup');
-};
+
 
 
 
