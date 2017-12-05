@@ -126,9 +126,9 @@ function simulateClick(element) {
 function action(text){
 		console.log("Taking action on text");
 	    console.log(text);
-
+	    
 		var re = /^(click|scroll|enter)\s(.*)/i;
-	    var result = re.exec(text);
+	    var result = re.exec(text.toLowerCase());
 	    
 	 	if(result) {
 		  var verb = result[1];
