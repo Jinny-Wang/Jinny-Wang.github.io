@@ -152,11 +152,22 @@ function action(text){
 	      	  var stringpieces = arg.split(/\s/);
 
 	      	  $("a,input,button").each(function() {
-	      	    if($(this)[0].tagName == "INPUT") {}
-	      	    	// look for the text in INPUT fields
-	      	    // } else if() {
-	      	    // 	//
+	      	  	var name = $(this)[0].innerHTML;
+	      	  	console.log("name is",name);
+	      	  	if(name==stringpieces[0] || name==stringpieces[1]){
+	      	  		console.log("clicking",$(this));
+	      	  		simulateClick($(this));
+	      	  	}
+	      	    // if($(this)[0].tagName == "INPUT") {
+	      	    // 	// look for the text in INPUT fields
 	      	    // }
+	      	    // else if(){
+	      	    // 	stringpieces[0]=="submit" && stringpieces[1]=="button" 
+	      	    // }
+	      	    // else{
+
+	      	    // } 
+	      	   
 	      	  });
 	      	  break;
 	      	case "scroll":
