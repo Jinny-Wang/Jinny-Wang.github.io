@@ -35,6 +35,8 @@ $(document).ready(function() {
 	  	    final_transcript = capitalize(final_transcript);
 	  	    final_span.innerHTML = linebreak(final_transcript);
 	  	    interim_span.innerHTML = linebreak(interim_transcript);
+	  	    console.log(final_transcript);
+	  	    //action(final_transcript);
 	  	    
 		  };
 		  recognition.onerror = function(event) { 
