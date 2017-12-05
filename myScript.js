@@ -161,8 +161,13 @@ function action(text){
 	      	  break;
 	      	case "scroll":
 	      	  console.log("handling scroll`")
-	      	  if(arg=="up"){}
+	      	  if(arg=="up"){
 	      	  	//scroll up 
+	      	  	$('html, body').animate({
+	        		scrollTop: $(document).scrollTop()-150
+	    		}, 1000);
+	      	  }
+	      	  	
 	      	  else if(arg=="down"){
 	      	  	//scroll down 
 	      	  	$('html, body').animate({
