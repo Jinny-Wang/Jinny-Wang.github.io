@@ -78,6 +78,9 @@ $(document).ready(function() {
 	  	      range.selectNode(document.getElementById('final_span'));
 	  	      window.getSelection().addRange(range);
 	  	    }
+
+	  	    var text = final_span.innerHTML;
+	  	    console.log(text);
 	  	    
 		  };
 
