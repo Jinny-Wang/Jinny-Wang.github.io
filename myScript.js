@@ -2,7 +2,60 @@ var command;
 var recognition;
 
 $(document).ready(function() {
+	var act = function action(text){
+		console.log("Taking action on text");
+	    console.log(text);
 
+		var re = /^(click|scroll|enter)\s(.*)/i;
+	    var result = re.exec(text);
+	    
+	 	if(result) {
+		  var verb = result[1];
+	      var arg = result[2]
+
+	      console.log("verb: " + verb + ", args: " + arg)
+
+	      switch(verb) {
+	      	case "click":
+	      	  // what do we do if click?
+	      	  console.log("handling click")
+
+	      	  //console.log($("*:contains('" + arg + "')"));
+
+	      	  var stringpieces = arg.split(/\s/);
+
+	      	  $("a,input,button").each(function() {
+	      	    if($(this)[0].tagName == "INPUT") {
+	      	    	// look for the text in INPUT fields
+	      	    } else if() {
+	      	    	//
+	      	    }
+	      	  });
+	      	  break;
+	      	case "scroll":
+	      	  console.log("handling scroll`")
+	      	  if(result[1]=="up")
+	      	  	//scroll up 
+	      	  else if(result[1]=="down"){
+	      	  	//scroll down 
+	      	  	$('html, body').animate({
+	        		scrollTop: $(document).scrollTop()+150
+	    		}, 1000);
+	      	  }
+	      	  	
+	      	  else
+	      	  	$("#final_span").innerHTML = "I don't understand!";
+	      	  
+	      	  break;
+	      	case "enter":
+	      	  // what do we do on enter?
+	      	  console.log("handling enter")
+	      	  break;
+	      	default:
+	      	  console.log("sorry, that is not a recognized command")
+	      }
+	 	
+	};
 	var create_email = false;
 	var final_transcript = '';
 	var recognizing = false;
@@ -81,7 +134,7 @@ $(document).ready(function() {
 	  	    var text = final_span.innerHTML;
 	  	    console.log(text);
 	  	    command = text;
-	  	    action(command);
+	  	    act(command);
 	  	    console.log(command);
 		  };
 
@@ -110,60 +163,7 @@ function capitalize(s) {
 }
 
 //given a command spoke by the user,take actions accordingly
-function action(text){
-	console.log("Taking action on text");
-    console.log(text);
 
-	var re = /^(click|scroll|enter)\s(.*)/i;
-    var result = re.exec(text);
-    
- 	if(result) {
-	  var verb = result[1];
-      var arg = result[2]
-
-      console.log("verb: " + verb + ", args: " + arg)
-
-      switch(verb) {
-      	case "click":
-      	  // what do we do if click?
-      	  console.log("handling click")
-
-      	  //console.log($("*:contains('" + arg + "')"));
-
-      	  var stringpieces = arg.split(/\s/);
-
-      	  $("a,input,button").each(function() {
-      	    if($(this)[0].tagName == "INPUT") {
-      	    	// look for the text in INPUT fields
-      	    } else if() {
-      	    	//
-      	    }
-      	  });
-      	  break;
-      	case "scroll":
-      	  console.log("handling scroll`")
-      	  if(result[1]=="up")
-      	  	//scroll up 
-      	  else if(result[1]=="down"){
-      	  	//scroll down 
-      	  	$('html, body').animate({
-        		scrollTop: $(document).scrollTop()+150
-    		}, 1000);
-      	  }
-      	  	
-      	  else
-      	  	$("#final_span").innerHTML = "I don't understand!";
-      	  
-      	  break;
-      	case "enter":
-      	  // what do we do on enter?
-      	  console.log("handling enter")
-      	  break;
-      	default:
-      	  console.log("sorry, that is not a recognized command")
-      }
- 	
-}
 
 function simulateClick(element) {
   if (!element) return;
