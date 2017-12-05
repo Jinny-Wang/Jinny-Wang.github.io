@@ -163,7 +163,7 @@ function action(text){
 	      	  console.log("sorry, that is not a recognized command")
 	      }
 	 	
-};
+}
 
 function simulateClick(element) {
   if (!element) return;
