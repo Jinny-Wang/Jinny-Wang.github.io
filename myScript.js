@@ -7,7 +7,7 @@ $(document).ready(function() {
 	    $('html, body').animate({
 	        scrollTop: $(document).scrollTop()+150
 	    }, 1000);
-  	})
+  	});
 	var create_email = false;
 	var final_transcript = '';
 	var recognizing = false;
