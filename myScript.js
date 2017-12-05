@@ -36,9 +36,7 @@ $(document).ready(function() {
 	  	    final_span.innerHTML = linebreak(final_transcript);
 	  	    interim_span.innerHTML = linebreak(interim_transcript);
 	  	    //console.log(final_transcript);
-	  	    var text = final_span.innerHTML;
-	  	    console.log(text);
-	  	    action(text);
+
 	  	    
 		  };
 		  recognition.onerror = function(event) { 
@@ -82,7 +80,8 @@ $(document).ready(function() {
 
 	  	    var text = final_span.innerHTML;
 	  	    console.log(text);
-	  	    action(text);
+	  	    command = text;
+	  	    action(command);
 		  };
 
 		  $("#start_button").click(function(e){
