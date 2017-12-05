@@ -3,6 +3,11 @@ var recognition;
 
 $(document).ready(function() {
 	
+	$(".scrolldown").click(function() {
+	    $('html, body').animate({
+	        scrollTop: $(document).scrollTop()+150
+	    }, 1000);
+  	})
 	var create_email = false;
 	var final_transcript = '';
 	var recognizing = false;
@@ -126,7 +131,7 @@ function simulateClick(element) {
 function action(text){
 		console.log("Taking action on text");
 	    console.log(text);
-	    
+
 		var re = /^(click|scroll|enter)\s(.*)/i;
 	    var result = re.exec(text.toLowerCase());
 	    
