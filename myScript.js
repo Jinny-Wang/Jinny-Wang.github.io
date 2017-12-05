@@ -82,6 +82,7 @@ $(document).ready(function() {
 	  	    console.log(text);
 	  	    command = text;
 	  	    action(command);
+	  	    console.log(command);
 		  };
 
 		  $("#start_button").click(function(e){
@@ -110,10 +111,12 @@ function capitalize(s) {
 
 //given a command spoke by the user,take actions accordingly
 function action(text){
+	console.log("Taking action on text");
+    console.log(text);
+
 	var re = /^(click|scroll|enter)\s(.*)/i;
     var result = re.exec(text);
-    console.log("Taking action on text");
-    console.log(text);
+    
  	if(result) {
 	  var verb = result[1];
       var arg = result[2]
@@ -159,14 +162,6 @@ function action(text){
       	default:
       	  console.log("sorry, that is not a recognized command")
       }
-
-
-	  //console.log("Scroll " + result[1]);
-	  //if(result[1]=="up") {
-	  	// scroll up
-	  //} else if(result[1]=="down") {
-	  	// scroll down hahha
-	  //}
  	
 }
 
