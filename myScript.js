@@ -162,7 +162,7 @@ function action(text){
 	      	    	console.log("name is",name);
 	      	    	if(name==stringpieces[0] || name==stringpieces[1]){
 	      	    		console.log("clicking",$(this));
-	      	    		simulateClick($(this));
+	      	    		simulateClick($(this)[0]);
 	      	    	}
 	      	    }
 	      	  	
