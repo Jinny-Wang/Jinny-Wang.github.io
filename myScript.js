@@ -164,7 +164,7 @@ function action(text){
 	  //if(result[1]=="up") {
 	  	// scroll up
 	  //} else if(result[1]=="down") {
-	  	// scroll down
+	  	// scroll down hahha
 	  //}
  	
 }
