@@ -38,6 +38,7 @@ $(document).ready(function() {
 	  	    //console.log(final_transcript);
 	  	    var text = final_span.innerHTML;
 	  	    console.log(text);
+	  	    action(text);
 	  	    
 		  };
 		  recognition.onerror = function(event) { 
