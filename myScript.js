@@ -168,6 +168,7 @@ function action(text){
 	      	    		simulateClick($(this)[0]);
 	      	    	}
 	      	    }
+	      	    window.alert("I don't understand");
 	      	  	
 	      	  
 	      	  });
@@ -189,6 +190,7 @@ function action(text){
 	      	  }
 	      	  else{
 	      	  	$("#final_span").innerHTML = "I don't understand!";
+	      	  	 window.alert("I don't understand");
 	      	  }
 	      	  break;
 	      	case "input":
@@ -197,9 +199,13 @@ function action(text){
 	      	  	lastfocus.value = arg;
 	      	  	console.log(lastfocus);
 	      	  }
+	      	  else{
+	      	  	window.alert("I don't understand");
+	      	  }
 
 	      	  break;
 	      	default:
+	      	  window.alert("I don't understand");
 	      	  console.log("sorry, that is not a recognized command")
 	      }
 	 	
