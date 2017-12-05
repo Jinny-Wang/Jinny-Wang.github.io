@@ -1,6 +1,6 @@
 var command;
 var recognition;
-
+var lastfocus  = null;
 $(document).ready(function() {
 	
 	$(".scrolldown").click(function() {
@@ -8,6 +8,12 @@ $(document).ready(function() {
 	    $('html, body').animate({
 	        scrollTop: $(document).scrollTop()+500
 	    }, 1000);
+  	});
+
+  	$('input').click(function(e){
+  		console.log("input was clicked!");
+  		lastfocus = e.target;
+  		console.log(lastfocus);
   	});
 	var create_email = false;
 	var final_transcript = '';
@@ -154,7 +160,7 @@ function action(text){
 	      	  $("a,input,button").each(function() {
 	      	  	if($(this)[0].tagName == "INPUT") {
 	      	    	if(stringpieces[0]=="submit"||stringpieces[1]=="submit")
-	      	    		simulateClick($(this));
+	      	    		simulateClick($(this)[0]);
 	      	    }
 	      	    else{
 	      	    	var name = $(this)[0].innerHTML;
@@ -166,8 +172,7 @@ function action(text){
 	      	    	}
 	      	    }
 	      	  	
-	      	
-	      	   
+	      	  
 	      	  });
 	      	  break;
 	      	case "scroll":
@@ -190,8 +195,11 @@ function action(text){
 	      	  }
 	      	  break;
 	      	case "enter":
-	      	  // what do we do on enter?
 	      	  console.log("handling enter")
+	      	  if(lastfocus != null){
+	      	  	lastfocus[0].value = arg;
+	      	  }
+
 	      	  break;
 	      	default:
 	      	  console.log("sorry, that is not a recognized command")
