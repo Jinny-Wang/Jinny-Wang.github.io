@@ -195,6 +195,7 @@ function action(text){
 	      	  console.log("handling enter")
 	      	  if(lastfocus != null){
 	      	  	lastfocus[0].value = arg;
+	      	  	console.log(lastfocus[0]);
 	      	  }
 
 	      	  break;
