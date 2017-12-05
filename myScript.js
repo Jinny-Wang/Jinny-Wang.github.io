@@ -4,10 +4,7 @@ var lastfocus  = null;
 $(document).ready(function() {
 	
 	$(".scrolldown").click(function() {
-		console.log("I was clicked!");
-	    $('html, body').animate({
-	        scrollTop: $(document).scrollTop()+500
-	    }, 1000);
+		window.alert("I was clicked!");
   	});
 
   	$('input').click(function(e){
@@ -139,7 +136,7 @@ function action(text){
 		console.log("Taking action on text");
 	    console.log(text);
 
-		var re = /^(click|scroll|enter)\s(.*)/i;
+		var re = /^(click|scroll|input)\s(.*)/i;
 	    var result = re.exec(text.toLowerCase());
 	    
 	 	if(result) {
@@ -194,7 +191,7 @@ function action(text){
 	      	  	$("#final_span").innerHTML = "I don't understand!";
 	      	  }
 	      	  break;
-	      	case "enter":
+	      	case "input":
 	      	  console.log("handling enter")
 	      	  if(lastfocus != null){
 	      	  	lastfocus[0].value = arg;
