@@ -1,4 +1,4 @@
-
+var command;
 var recognition;
 
 $(document).ready(function() {
@@ -38,6 +38,8 @@ $(document).ready(function() {
 	  	    //console.log(final_transcript);
 	  	    var text = final_span.innerHTML;
 	  	    console.log(text);
+	  	    command = text;
+	  	    console.log(command);
 	  	    
 		  };
 		  recognition.onerror = function(event) { 
