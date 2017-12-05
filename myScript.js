@@ -4,6 +4,7 @@ var recognition;
 $(document).ready(function() {
 	
 	$(".scrolldown").click(function() {
+		console.log("I was clicked!");
 	    $('html, body').animate({
 	        scrollTop: $(document).scrollTop()+150
 	    }, 1000);
